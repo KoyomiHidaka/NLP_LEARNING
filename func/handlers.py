@@ -46,24 +46,24 @@ async def start(message: Message):
 #            data[username]['attempts'] += 1
 #            save_data(data)
 #-----------------------------------------------------------------------------------------------------------------------------------------
-    #@dp.message_handler(state=LoginState.waiting_for_password)
-    #async def process_login_password(message: types.Message, state: FSMContext):
-    #    password = message.text
-    #    state_data = await state.get_data()
-    #    username = state_data.get('username')
-    #    data = load_data()
-    #    if data.get(username, {}).get('password') == password:
-    #        await message.answer('Вы вошли успешно!')
-    #        data[username]['attempts'] = 0
-    #        save_data(data)
-    #    else:
-    #        await message.answer('Неверный пароль. Попробуйте снова.')
-    #        data[username]['attempts'] += 1
-    #        save_data(data)
-    #    
-    #    if data[username]['attempts'] >= 7:
-    #        await message.answer('Превышен лимит попыток. Попробуйте позже.')
-    #    await state.finish()
+#@dp.message_handler(state=LoginState.waiting_for_password)
+#async def process_login_password(message: types.Message, state: FSMContext):
+#    password = message.text
+#    state_data = await state.get_data()
+#    username = state_data.get('username')
+#    data = load_data()
+#    if data.get(username, {}).get('password') == password:
+#        await message.answer('Вы вошли успешно!')
+#        data[username]['attempts'] = 0
+#        save_data(data)
+#    else:
+#        await message.answer('Неверный пароль. Попробуйте снова.')
+#        data[username]['attempts'] += 1
+#        save_data(data)
+#    
+#    if data[username]['attempts'] >= 7:
+#        await message.answer('Превышен лимит попыток. Попробуйте позже.')
+#    await state.finish()
 #-----------------------------------------------------------------------------------------------------------------------------------------
     #@dp.message_handler(state=RegisterState.waiting_for_username)
     #async def process_register_username(message: types.Message, state: FSMContext):
