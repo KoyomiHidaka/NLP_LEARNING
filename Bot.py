@@ -2,10 +2,7 @@ import logging
 import aiogram
 import asyncio
 import json
-#-----------------------------------------------------------------------------------------------------------------------------------------
-from handlers import register_handlers
-from keyboards import start_keyboard
-from aiogram.utils import executor
+from aiogram.fsm.state import State, StatesGroup
 from aiogram import Dispatcher, Bot
 from aiogram.filters import CommandStart
 from aiogram.types import Message
@@ -47,7 +44,7 @@ class RegisterState(StatesGroup):
     waiting_for_username = State()
     waiting_for_password = State()
 
-register_handlers(dp, load_data, save_data, LoginState, RegisterState, start_keyboard)
+#register_handlers(dp, load_data, save_data, LoginState, RegisterState, start_keyboard)
 #-----------------------------------------------------------------------------------------------------------------------------------------
 handlers.reg_handler(dp)
 bot = Bot(token=config.bot_token.get_secret_value())
