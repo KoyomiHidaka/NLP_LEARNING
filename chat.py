@@ -18,10 +18,8 @@ all_words = data["all_words"]
 tags = data["tags"]
 model_state = data["model_state"]
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
-
 model.load_state_dict(model_state)
 model.eval()
-
 bot_name = "T"
 print("Go Chat type Quit for exit")
 
@@ -36,8 +34,6 @@ while True:
     output = model(X)
     _, predicted = torch.max(output, dim=1)
     tag = tags[predicted.item()]
-
-
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
 
